@@ -62,11 +62,11 @@ android {
 
 :point_right: **[조경선](https://github.com/Chokyungsun)**
 
-:point_right: **[이종현]()**
+:point_right: **이종현**
 
-:point_right: **[김준범]()**
+:point_right: **김준범**
 
-:point_right: **[Shofiyyah Nadhiroh]()**
+:point_right: **[Shofiyyah Nadhiroh](https://github.com/shofinadhiroh)**
 
-:point_right: **[Malika Bounaga]()**
+:point_right: **Malika Bounaga**
 
