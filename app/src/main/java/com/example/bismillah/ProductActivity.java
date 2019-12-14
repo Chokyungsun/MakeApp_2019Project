@@ -3,6 +3,7 @@ package com.example.bismillah;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -31,7 +32,7 @@ public class ProductActivity extends AppCompatActivity {
     String[] link = new String[8];
     String[] img_link = new String[8];
     int product_num;
-    private Bitmap bitmap;
+    private Bitmap[] bitmap = new Bitmap[8];
     String[] name  = new String[8];
 
     @Override
@@ -91,6 +92,7 @@ public class ProductActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     try {
+
                         URL imgLink = new URL(img_link[finalI]);
 
                         HttpURLConnection conn = (HttpURLConnection) imgLink.openConnection();
@@ -99,7 +101,9 @@ public class ProductActivity extends AppCompatActivity {
                         conn.connect();
 
                         InputStream in = conn.getInputStream();
-                        bitmap = BitmapFactory.decodeStream(in);
+                        bitmap[finalI] = BitmapFactory.decodeStream(in);
+
+
                     } catch (
                             MalformedURLException e) {
                         e.printStackTrace();
@@ -114,7 +118,8 @@ public class ProductActivity extends AppCompatActivity {
 
             try {
                 mthread.join();
-                product[i].setImageBitmap(bitmap);
+
+                product[i].setImageBitmap(bitmap[finalI]);
                 product_name[i].setText(name[i]);
 
 

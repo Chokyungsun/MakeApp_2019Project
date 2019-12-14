@@ -68,6 +68,10 @@ public class JsonParser {
             JSONArray productArray = new JSONArray(json);
             JSONObject productObject = productArray.getJSONObject(index);
 
+           int product_num = productArray.length();
+           if(index >= product_num) imglink = "";
+           else imglink = productObject.getString("image_link");
+
             brand = productObject.getString("brand");
             infolist += "Brand:\n  " + brand + "\n";
 
@@ -97,8 +101,6 @@ public class JsonParser {
             link = productObject.getString("product_link");
             infolist += "Link: \n  " + link + "\n";
 
-
-            imglink = productObject.getString("image_link");
 
         } catch (
                 JSONException e) {
